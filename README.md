@@ -7,18 +7,18 @@ Proyek ini bertujuan untuk menganalisis pola penggunaan sepeda berdasarkan berba
 
 **Struktur Folder**
 
-submission
-- dashboard
+- submission
+ - dashboard
    - main_data.csv
    - dashboard.py
-- data
+ - data
    - data_1.csv
    - data_2.csv
    - merged_data.csv
-- notebook.ipynb
-- README.md
-- requirements.txt
-- url.txt
+ - notebook.ipynb
+ - README.md
+ - requirements.txt
+ - url.txt
 
 **Tujuan Analisis**
 
