@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
 
 # Load dataset
-df_path = os.path.join('D:/Dicoding Materi/submission/Dashboard', 'main_data.csv')
+df_path = os.path.join(os.path.dirname(__file__), "main_data.csv")
 df = pd.read_csv(df_path)
 
 # Pilih fitur untuk clustering
