@@ -46,7 +46,7 @@ Jalankan perintah berikut untuk membuka dashboard interaktif:
 streamlit run dashboard/dashboard.py
 
 4.Alternatif jika anda ingin meninjau project secara online
-masuk ke link berikut :
+masuk ke link berikut : https://h6jgvfedcernsz5kgth6xe.streamlit.app/
 
 **Hasil Analisis**
 
