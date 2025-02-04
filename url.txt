@@ -1,1 +1,9 @@
+Link dataset :
 https://archive.ics.uci.edu/ml/dataset/Bike+Sharing+Dataset 
+
+Link referensi metode clustering:
+1. https://towardsdatascience.com/k-means-clustering-algorithm-applications-evaluation-methods-and-drawbacks-aa03e644b48a
+2. https://scikit-learn.org/stable/modules/clustering.html
+
+Link dashboard deploy : 
+https://h6jgvfedcernsz5kgth6xe.streamlit.app/
