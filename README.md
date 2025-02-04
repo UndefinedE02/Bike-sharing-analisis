@@ -34,16 +34,19 @@ Dashboard Interaktif: Dibangun dengan Streamlit (dashboard.py).
 
 **Cara Menjalankan Proyek**
 
-1️.Instalasi Dependensi
+1.Instalasi Dependensi
 Pastikan Anda sudah menginstal semua pustaka yang dibutuhkan dengan menjalankan perintah berikut:
 pip install -r requirements.txt
 
-2️.Menjalankan Notebook Jupyter
+2.Menjalankan Notebook Jupyter
 Buka Jupyter Notebook dan jalankan notebook.ipynb untuk melakukan eksplorasi dan analisis data.
 
-3️.Menjalankan Dashboard Streamlit
+3.Menjalankan Dashboard Streamlit
 Jalankan perintah berikut untuk membuka dashboard interaktif:
 streamlit run dashboard/dashboard.py
+
+4.Alternatif jika anda ingin meninjau project secara online
+masuk ke link berikut :
 
 **Hasil Analisis**
 
