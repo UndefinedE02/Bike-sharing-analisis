@@ -8,15 +8,15 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
 
 # Load dataset
-df_path = os.path.join(os.path.dirname(__file__), "main_data.csv")
-df = pd.read_csv(df_path)
+path_data = os.path.join('D:/Dicoding Materi/submission/Dashboard', 'main_data.csv')
+imple_data = pd.read_csv(path_data)
 
 # Pilih fitur untuk clustering
-features = ['temp', 'hum', 'windspeed', 'hr']
+fitur = ['temp', 'hum', 'windspeed', 'hr']
 
 # Mengisi NaN dengan nilai rata-rata
 imputer = SimpleImputer(strategy='mean')
-data_imputed = imputer.fit_transform(df[features])
+data_imputed = imputer.fit_transform(imple_data[fitur])
 
 # Standarisasi data
 scaler = StandardScaler()
@@ -26,7 +26,7 @@ data_scaled = scaler.fit_transform(data_imputed)
 kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
 
 # Lakukan clustering
-df['cluster'] = kmeans.fit_predict(data_scaled)
+imple_data['cluster'] = kmeans.fit_predict(data_scaled)
 
 # Sidebar
 st.sidebar.header("Filter Data")
@@ -38,8 +38,8 @@ season_mapping = {"Musim Semi": 1, "Musim Panas": 2, "Musim Gugur": 3, "Musim Di
 weekday_mapping = {"Senin": 0, "Selasa": 1, "Rabu": 2, "Kamis": 3, "Jumat": 4, "Sabtu": 5, "Minggu": 6}
 
 # Filter data
-df_filtered = df[(df['season'] == season_mapping[selected_season]) & 
-                    (df['weekday'] == weekday_mapping[selected_weekday])]
+df_filtered = imple_data[(imple_data['season'] == season_mapping[selected_season]) & 
+                    (imple_data['weekday'] == weekday_mapping[selected_weekday])]
 
 st.title("Dashboard Bike Sharing Analysis")
 st.write("### Tren Penggunaan Sepeda Berdasarkan Waktu")
