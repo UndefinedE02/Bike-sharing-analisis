@@ -38,6 +38,25 @@ if selected_weekday != "All Day":
     imple_data = imple_data[imple_data['weekday'] == weekday_mapping[selected_weekday]]
 
 st.title("Dashboard Bike Sharing Analysis")
+
+st.write("### Hubungan Cuaca dan Penggunaan Sepeda")
+
+# **Scatter plot suhu dan kecepatan angin vs jumlah peminjaman**
+# **Visualisasi Binning (Cluster)**
+st.write("### Kategori Penggunaan Sepeda Berdasarkan Suhu")
+fig, ax = plt.subplots(figsize=(8, 5))
+sns.scatterplot(x=imple_data['temp'], y=imple_data['cnt'], hue=imple_data['cluster'], palette='viridis', ax=ax)
+plt.xlabel("Suhu")
+plt.ylabel("Jumlah Penyewaan")
+st.pyplot(fig)
+
+st.write("### Kategori Penggunaan Sepeda Berdasarkan kecepatan angin")
+fig, ax = plt.subplots(figsize=(8, 5))
+sns.scatterplot(x=imple_data['windspeed'], y=imple_data['cnt'], hue=imple_data['cluster'], palette='viridis', ax=ax)
+plt.xlabel("Kecepatan angin")
+plt.ylabel("Jumlah Penyewaan")
+st.pyplot(fig)
+
 st.write("### Tren Penggunaan Sepeda Berdasarkan Waktu")
 
 # **Visualisasi berdasarkan hari**
@@ -45,7 +64,7 @@ st.write("### Tren Penggunaan Sepeda Berdasarkan Waktu")
 hari_labels = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]
 
 # Visualisasi berdasarkan hari
-fig, ax = plt.subplots(figsize=(6, 5))
+fig, ax = plt.subplots(figsize=(7, 5))
 sns.lineplot(x=imple_data['weekday'], y=imple_data['cnt'], ax=ax)
 
 # Ganti label sumbu X menjadi nama hari
@@ -53,22 +72,5 @@ ax.set_xticks(range(7))  # Pastikan angka 0-6 ada di sumbu X
 ax.set_xticklabels(hari_labels)
 
 plt.xlabel("Hari")
-plt.ylabel("Jumlah Penyewaan")
-st.pyplot(fig)
-
-st.write("### Hubungan Cuaca dan Penggunaan Sepeda")
-
-# **Scatter plot suhu vs jumlah peminjaman**
-fig, ax = plt.subplots(figsize=(10, 6))
-sns.scatterplot(x=imple_data['windspeed'], y=imple_data['cnt'], ax=ax)
-plt.xlabel("Kecepatan angin")
-plt.ylabel("Jumlah Penyewaan")
-st.pyplot(fig)
-
-# **Visualisasi Binning (Cluster)**
-st.write("### Kategori Penggunaan Sepeda Berdasarkan Binning")
-fig, ax = plt.subplots(figsize=(8, 5))
-sns.scatterplot(x=imple_data['temp'], y=imple_data['cnt'], hue=imple_data['cluster'], palette='viridis', ax=ax)
-plt.xlabel("Suhu")
 plt.ylabel("Jumlah Penyewaan")
 st.pyplot(fig)
