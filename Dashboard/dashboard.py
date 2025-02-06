@@ -43,21 +43,21 @@ st.write("### Hubungan Cuaca dan Penggunaan Sepeda")
 
 # **Scatter plot cuaca vs jumlah peminjaman**
 # **Visualisasi Binning (Cluster)**
-st.write("### Kategori Penggunaan Sepeda Berdasarkan Suhu")
+st.write("### 1. Penggunaan Sepeda Berdasarkan Suhu")
 fig, ax = plt.subplots(figsize=(8, 5))
 sns.scatterplot(x=imple_data['temp'], y=imple_data['cnt'], hue=imple_data['cluster'], palette='viridis', ax=ax)
 plt.xlabel("Suhu")
 plt.ylabel("Jumlah Penyewaan")
 st.pyplot(fig)
 
-st.write("### Kategori Penggunaan Sepeda Berdasarkan Kelembaban")
+st.write("### 2. Penggunaan Sepeda Berdasarkan Kelembaban")
 fig, ax = plt.subplots(figsize=(8, 5))
 sns.scatterplot(x=imple_data['hum'], y=imple_data['cnt'], hue=imple_data['cluster'], palette='viridis', ax=ax)
 plt.xlabel("Kelembaban")
 plt.ylabel("Jumlah Penyewaan")
 st.pyplot(fig)
 
-st.write("### Kategori Penggunaan Sepeda Berdasarkan kecepatan angin")
+st.write("### 3. Penggunaan Sepeda Berdasarkan kecepatan angin")
 fig, ax = plt.subplots(figsize=(8, 5))
 sns.scatterplot(x=imple_data['windspeed'], y=imple_data['cnt'], hue=imple_data['cluster'], palette='viridis', ax=ax)
 plt.xlabel("Kecepatan angin")
