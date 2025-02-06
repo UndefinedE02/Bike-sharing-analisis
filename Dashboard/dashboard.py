@@ -41,12 +41,19 @@ st.title("Dashboard Bike Sharing Analysis")
 
 st.write("### Hubungan Cuaca dan Penggunaan Sepeda")
 
-# **Scatter plot suhu dan kecepatan angin vs jumlah peminjaman**
+# **Scatter plot cuaca vs jumlah peminjaman**
 # **Visualisasi Binning (Cluster)**
 st.write("### Kategori Penggunaan Sepeda Berdasarkan Suhu")
 fig, ax = plt.subplots(figsize=(8, 5))
 sns.scatterplot(x=imple_data['temp'], y=imple_data['cnt'], hue=imple_data['cluster'], palette='viridis', ax=ax)
 plt.xlabel("Suhu")
+plt.ylabel("Jumlah Penyewaan")
+st.pyplot(fig)
+
+st.write("### Kategori Penggunaan Sepeda Berdasarkan Kelembaban")
+fig, ax = plt.subplots(figsize=(8, 5))
+sns.scatterplot(x=imple_data['hum'], y=imple_data['cnt'], hue=imple_data['cluster'], palette='viridis', ax=ax)
+plt.xlabel("Kelembaban")
 plt.ylabel("Jumlah Penyewaan")
 st.pyplot(fig)
 
